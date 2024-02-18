@@ -1,0 +1,58 @@
+WORK IN PROGRESS
+Yo, everything I need to know about git and github.
+
+START A PROJECT
+either: 
+	1. Go to github, click the new button and get to it	
+		or  
+	2. Navigate to a folder you're wokring on and the command is: "git init" 
+		- a ".git" hidden folder will be created in the directory.
+		- right now, it's just formated to work with git, but it's not connected to github. You'll have to put it up there for it to be on the cloud
+		 - I don't know how to do that, use method 1
+
+WORK ON A PROJECT
+LAZY WAY:         (this only works with the "main" branch. Bad practice in general, works for small stuff")
+	1. Navigate to the directory (yes in a terminal) and use command: "git clone <link coppied form github>"
+		- This should bring all files from github and create a the new directory
+		- remember to "cd <directoryName>" in the terminal to actually start playing with it.
+	2. Make your changes, code your heart out,
+		- Anything you make a change on should have a "U" (for a new file) or an "M" for Modified beside it in VSC, this stands for untracked. 
+		- Untracked files/changes are not known by git and the git "systsm" does not know it's part of the project yet
+	3. Add your changes with: "git add ."
+		- This adds everything in the current directory that hasn't been added to the project and is now tracked and included thorugh git
+		- It should have an "A" beside it for added, This does not mean it is commited
+	4. Commit changes with: "git commit -m "add any comment and use quotation marks"
+		- This is a tracked change and the new "official" version of this branch
+		- This version only exists on your computer in that ".git" folder
+	5. Push the commit(s) to github for everyone else to use with: "git push origin head"
+
+PROPER WAY:  
+	MAKE A NEW BRANCH:
+		1. To not edit and commit the main and only working branch, make a new "branch". Use command: "git branch <branchName>"
+			- Branches are for versions. If you want to add something and not break everything, use one.
+	SWITCH TO A BRANCH:
+		1. To start working on an existing branch, use command: "git checkout <branchName>"
+		2. To see what branch you're working on and the available branches use command: "git branch"
+
+	ONLY PULL A BRANCH
+		1. If you're only going to be working on a single branch and don't need the whole repo, use command: "git pull origin <branchName>
+		2. Switch to this branch with: "git branch <branchname>
+	
+	KEEP YOUR BRANCH UP TO DATE
+		1. Update your branche's code with updated code from it's parent (if it got updated) with command: git merge <parentBranch> 
+			- If you've been working on a branch and the parent gets updated, you should do this before it gets crazy
+			- make sure the child branch is checked out
+	
+	1. Once switched to a branch, code ur nuts off.
+
+	MERGE BRANCHES LOCALLY
+		1. Switch to the branch you want to merge into with: "git checkout <destinationBranchName>"
+		2. Use the merge command with the target branch to try to merge it: "git merge <targetBranchName>"
+			- if the child branch is not current with the progress from the parent branch, you will have to use the merge fixer
+	
+	MERGE BRANCHES IN GITHUB
+		1. Make github aware of unknown branches with command: "git push --set-upstream origin <branchName>"
+			- If github doesn't know about this local branch (before you do the local merge above) you need to tell it.
+
+
+
